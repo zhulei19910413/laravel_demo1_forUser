@@ -177,7 +177,7 @@ class StudentController extends Controller
     public function orm1(){
 
         //all();
-        //$students = Student::all();
+        $students = Student::all();
 
 
         //find();
@@ -199,7 +199,7 @@ class StudentController extends Controller
 
 //        聚合函数
 //        $students = Student::count();
-        $students = Student::where('id','>','10')->max('age');
+//        $students = Student::where('id','>','10')->max('age');
 
         dd($students);
 
@@ -248,8 +248,46 @@ class StudentController extends Controller
 
         dd($bool);
 
+    }
 
 
+    //修改数据；
+    public  function orm3(){
+
+//        $student = Student::find(14);
+//        $student -> name = 'kitty';
+//        $bool = $student->save();
+//        var_dump($bool);
+
+
+        $num = Student::where('id','>',18) ->update(
+            ['age'=>14]
+        );
+        var_dump($num);
+
+    }
+
+    public function orm4(){
+
+        //1.通过模型删除(id=20)；
+//        $stu = Student::find(20);
+//        $data = $stu->delete();
+//        var_dump($data);
+
+
+        //2.主键删除；
+
+        //单条删除
+        //$stu = Student::destroy(18);
+        //多条1
+        //$stu = Student::destroy(10,11);
+        //多条2
+        //$stu = Student::destroy([1,2]);
+
+        //3.删除制定条件参数；
+
+        $stu=Student::where('id','>',20)->delete();
+        var_dump($stu);
 
     }
 
