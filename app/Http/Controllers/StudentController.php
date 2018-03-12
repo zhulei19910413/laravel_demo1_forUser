@@ -184,6 +184,7 @@ class StudentController extends Controller
         //$students = Student::find(3);
 
 
+
         //findOrFail();根据主见查询，没有抛出异常；
         //$students = Student::findOrFail(113);
 
