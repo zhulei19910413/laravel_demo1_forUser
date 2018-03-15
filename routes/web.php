@@ -55,6 +55,8 @@ Route::get('orm3','StudentController@orm3');
 
 Route::get('orm4','StudentController@orm4');
 
+Route::get('student/request1','StudentController@request1');
+
 
 
 

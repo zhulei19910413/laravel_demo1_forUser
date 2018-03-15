@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -288,6 +289,45 @@ class StudentController extends Controller
 
         $stu=Student::where('id','>',20)->delete();
         var_dump($stu);
+
+    }
+
+
+    public function request1(Request $request){
+
+        //1.取值
+//        echo $request->input('name');
+
+//        echo $request->input('sex','未知');
+
+//         if($request->has('name')){
+//             echo $request->input('name');
+//         }else{
+//             echo '无参数';
+//         };
+
+
+//        $res = $request->all();
+//        dd($res);
+
+
+        //判断请求类型
+        //echo $request->method();
+
+//        if($request->isMethodCacheable('POST')){
+//            echo "YES";
+//        }else{
+//            echo "NO";
+//        }
+
+
+//        $res= $request->ajax();
+
+
+//        $res= $request->is('student/*');
+//        dd($res);
+
+        echo $request->url();
 
     }
 
